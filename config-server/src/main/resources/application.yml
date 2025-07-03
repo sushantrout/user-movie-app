@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  profiles:
+    active: native  # ✅ This is allowed here because it's for the config server itself
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs  # assumes your YAML configs are in resources/configs/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

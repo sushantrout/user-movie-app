@@ -1,0 +1,40 @@
+### Create Movie
+POST http://localhost:8080/movies
+Content-Type: application/json
+
+{
+  "title": "Inception",
+  "genre": "Science Fiction",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010
+}
+
+###
+@movieId = 910e87fd-2df0-4f55-880c-a26e97f8e2ff
+
+### Get Movie by ID
+GET http://localhost:8080/movies/{{movieId}}
+
+###
+
+### Update Movie
+PUT http://localhost:8080/movies/{{movieId}}
+Content-Type: application/json
+
+{
+  "id": "{{movieId}}",
+  "title": "Inception - Updated",
+  "genre": "Sci-Fi",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010
+}
+
+###
+
+### Delete Movie
+DELETE http://localhost:8080/movies/{{movieId}}
+
+###
+
+### Get All Movies
+GET http://localhost:8080/movies

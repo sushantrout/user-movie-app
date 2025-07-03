@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: user-service
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/muserdb
+    username: postgres
+    password: admin
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:/ddl/user-schema.sql
+
+server:
+  port: 8013

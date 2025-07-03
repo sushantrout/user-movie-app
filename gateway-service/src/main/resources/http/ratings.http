@@ -1,0 +1,38 @@
+### Create Rating
+POST http://localhost:8080/ratings
+Content-Type: application/json
+
+{
+  "userId": "6c663c3d-fc73-44d8-837c-5e4ecdb536db",
+  "movieId": "e9512156-1cca-441a-9779-722da91e16e4",
+  "rating": 4
+}
+
+###
+@ratingId = 0f48fbb0-7f52-4c4e-bf0d-339ad71c7649
+
+### Get Rating by ID
+GET http://localhost:8080/ratings/{{ratingId}}
+
+###
+
+### Update Rating
+PUT http://localhost:8080/ratings/{{ratingId}}
+Content-Type: application/json
+
+{
+  "id": "{{ratingId}}",
+  "userId": "6c663c3d-fc73-44d8-837c-5e4ecdb536db",
+  "movieId": "e9512156-1cca-441a-9779-722da91e16e4",
+  "rating": 5
+}
+
+###
+
+### Delete Rating
+DELETE http://localhost:8080/ratings/{{ratingId}}
+
+###
+
+### Get All Ratings
+GET http://localhost:8080/ratings

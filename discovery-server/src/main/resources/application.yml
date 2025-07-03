@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  client:
+    register-with-eureka: false  # ? Eureka server doesn't register itself
+    fetch-registry: false        # ? Eureka server doesn't fetch registry from others
+  server:
+    wait-time-in-ms-when-sync-empty: 0

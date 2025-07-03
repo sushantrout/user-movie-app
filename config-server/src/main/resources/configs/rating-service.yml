@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: rating-service
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/mratingdb
+    username: postgres
+    password: admin
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:/ddl/rating-schema.sql
+
+---
+server:
+  port: 8012

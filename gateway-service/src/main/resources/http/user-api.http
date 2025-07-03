@@ -1,0 +1,31 @@
+### Create User
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+###
+@userId = a96c0724-7ed7-4209-bae4-8486a2f68020
+
+### Get User by ID
+GET http://localhost:8080/users/{{userId}}
+
+###
+
+### Update User
+PUT http://localhost:8080/users/{{userId}}
+Content-Type: application/json
+
+{
+  "id": "{{userId}}",
+  "name": "John Doe Updated",
+  "email": "john.doe@exampleupdated.com"
+}
+
+###
+
+### Delete User
+DELETE http://localhost:8080/users/{{userId}}
