@@ -2,6 +2,8 @@ package com.tech.handler;
 
 import com.tech.service.UserService;
 import com.tech.model.dto.UserDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -20,6 +22,17 @@ public class UserHandler {
         this.userService = userService;
     }
 
+    @Operation(
+            summary = "Create a new user",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "User object",
+                    required = true
+            ),
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "User created"),
+                    @ApiResponse(responseCode = "400", description = "Invalid input")
+            }
+    )
     public Mono<ServerResponse> createUser(ServerRequest request) {
         return request.bodyToMono(UserDTO.class)
                 .flatMap(userService::createUser)
